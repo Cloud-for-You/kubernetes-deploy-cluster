@@ -1,4 +1,5 @@
-# kubeadm-config.yaml
+# kubeadm-config-c2.yaml
+# Configuration file for Cluster 2
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta3
 kubernetesVersion: 1.29.1
@@ -7,8 +8,8 @@ etcd:
   local:
     dataDir: /var/lib/etcd
 networking:
-  serviceSubnet: 192.168.128.0/17
-  podSubnet: 192.168.0.0/17
+  podSubnet: 100.61.2.0/25
+  serviceSubnet: 100.61.2.128/25
   dnsDomain: cluster.local
 
 ---
