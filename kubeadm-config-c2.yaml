@@ -8,8 +8,8 @@ etcd:
   local:
     dataDir: /var/lib/etcd
 networking:
-  podSubnet: 100.61.2.0/25
-  serviceSubnet: 100.61.2.128/25
+  podSubnet: 100.65.0.0/17
+  serviceSubnet: 100.65.128.0/17
   dnsDomain: cluster.local
 
 ---
