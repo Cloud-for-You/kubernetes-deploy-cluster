@@ -21,7 +21,7 @@ kind: Service
 metadata:
   annotations:
     service.cilium.io/global: "true"
-    service.cilium.io/shared: "false"
+    #service.cilium.io/shared: "false"
   name: sample-app1-multicluster
   namespace: sample-app1
   labels:
