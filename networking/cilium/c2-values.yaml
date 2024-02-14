@@ -1,0 +1,6 @@
+cluster:
+  name: k8s-c2
+  id: 2
+ingressController:
+  enabled: true
+  loadbalancerMode: shared
