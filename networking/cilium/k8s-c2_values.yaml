@@ -1,6 +1,9 @@
 cluster:
   name: k8s-c2
   id: 2
+clustermesh:
+  config:
+    enabled: true
 ingressController:
   enabled: true
   loadbalancerMode: shared
