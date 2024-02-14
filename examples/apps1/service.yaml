@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-app1
+  namespace: sample-app1
+  labels:
+    k8s-app: sample-app1
+spec:
+  selector:
+    k8s-app: sample-app1
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.cilium.io/global: "true"
+    service.cilium.io/shared: "false"
+  name: sample-app1-multicluster
+  namespace: sample-app1
+  labels:
+    k8s-app: sample-app1
+spec:
+  selector:
+    k8s-app: sample-app1
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

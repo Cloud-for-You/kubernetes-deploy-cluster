@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sample-app1
+  namespace: sample-app1
+spec:
+  ingressClassName: cilium
+  rules:
+  - host: sample-app1.apps.k8s.cfy.cz
+    http:
+      paths:
+      - backend:
+          service:
+            name: sample-app1
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
