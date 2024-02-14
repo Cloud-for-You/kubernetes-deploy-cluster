@@ -3,7 +3,7 @@
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta3
 kubernetesVersion: 1.29.1
-clusterName: "local-cluster"
+clusterName: "k8s-c1"
 etcd:
   local:
     dataDir: /var/lib/etcd
