@@ -46,5 +46,15 @@ kubectl create secret generic cilium-ca -n kube-system --from-file=ca.crt=networ
 ### Enable service
 In each clusters
 ```
-cilium clustermesh enable --service-type=LoadBalancer
+cilium clustermesh enable --service-type NodePort
+```
+
+### Connect clusters 
+Is using only one cluster (eg k8s-c1)
+```
+cilium clustermesh connect --destination-endpoint <IP>:32379
+```
+IP is get from return
+```
+cilium clustermesh status --wait
 ```
