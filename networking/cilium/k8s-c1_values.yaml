@@ -4,6 +4,8 @@ cluster:
 clustermesh:
   config:
     enabled: true
+envoy:
+  enabled: true
 ingressController:
   enabled: true
   loadbalancerMode: shared
