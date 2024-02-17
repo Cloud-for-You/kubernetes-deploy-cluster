@@ -2,8 +2,31 @@ cluster:
   name: k8s-c2
   id: 2
 clustermesh:
+  useAPIServer: true
+  apiserver:
+    service:
+      type: LoadBalancer
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    replicas: 2
   config:
     enabled: true
+    domain: mesh.cilium.io
+    clusters:
+    - name: k8s-c1
+      address: k8s-c1.mesh.cilium.io
+      port: 2379
+      ips:
+      - 10.104.91.148
+      - 10.104.42.62
+      tls:
+        cert: <encoded cert string in the secret of clustermesh-apiserver-client-cert>
+        key: <encoded key string in the secret of clustermesh-apiserver-client-cert>
+externalWorkloads:
+  enabled: true
+envoy:
+  enabled: true
+apiserver:
 ingressController:
   enabled: true
   loadbalancerMode: shared
